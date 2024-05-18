@@ -64,7 +64,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             
             //if above runs successfully, we should get a result
-            print(result)
+//            print(result)
+            //checking 1st result for hotdog 
+            if let firstResult = result.first {
+                print(firstResult)
+                if firstResult.identifier.contains("hotdog") {
+                    self.navigationItem.title = "Hotdog!"
+                } else {
+                    self.navigationItem.title = "Not Hotdog!"
+                }
+            }
         }
         
         //to perform this request, it will need a handler, below is that handler
